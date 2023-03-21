@@ -23,7 +23,7 @@ class linkedList {
 
   size() {
     let currentNode = this.head;
-    const count = 1;
+    const count = 0;
     while (currentNode.next !== null) {
       currentNode = currentNode.next;
       count++;
@@ -31,11 +31,11 @@ class linkedList {
     return count;
   }
 
-  head() {
+  getHead() {
     return this.head;
   }
 
-  tail() {
+  getTail() {
     let currentNode = this.head;
     while (currentNode.next !== null) {
       currentNode = currentNode.next;
@@ -66,7 +66,7 @@ class linkedList {
 
   find(value) {
     let currentNode = this.head;
-    const count = 0;
+    const count = 1;
     while (currentNode.value !== value) {
       if (currentNode.next === null) {
         return (`List does not contain ${value}`);
@@ -79,12 +79,12 @@ class linkedList {
 
   listToString() {
     let currentNode = this.head;
-    const list = '';
+    let list = '';
     while (currentNode.next) {
       list += `(${currentNode}) ->`;
       currentNode = currentNode.next;
     }
-    list += `(${currentNode} -> null)`;
+    list += `(${currentNode.value} -> null)`;
     return list;
   }
 }
