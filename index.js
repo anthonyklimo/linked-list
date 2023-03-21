@@ -3,7 +3,6 @@ import Node from './node';
 class linkedList {
   constructor() {
     this.head = null;
-    this.tail = null;
   }
 
   append(value) {
@@ -51,6 +50,14 @@ class linkedList {
       count++;
     }
     return currentNode;
+  }
+
+  pop() {
+    let currentNode = this.head;
+    while (currentNode.next.next !== null) {
+      currentNode = currentNode.next;
+    }
+    currentNode.next = null;
   }
 
   contains(value) {
